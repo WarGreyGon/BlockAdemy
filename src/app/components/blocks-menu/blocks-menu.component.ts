@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BlocksMenuService } from '../../services/blocks-menu.service';
+import { SubOption } from '../../own-objects/sub-option';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { BlocksMenuService } from '../../services/blocks-menu.service';
 
 export class BlocksMenuComponent implements OnInit {
 
-    private subOptions: string[];
+    private subOptions: SubOption[];
 
 
     constructor(private blockMenuservice: BlocksMenuService) {
