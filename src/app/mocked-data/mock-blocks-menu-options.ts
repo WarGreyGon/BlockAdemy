@@ -1,6 +1,6 @@
-import { SubOption } from '../own-objects/sub-option';
+import { BlocksMenuCategory } from '../own-objects/blocks-menu-category';
 
-export const BLOCKSMENUSUBOPTIONS: SubOption[] = [
+export const BLOCKSMENUCATEGORIES: BlocksMenuCategory[] = [
 
     {name : "Estructuras Básicas", listOfBlocks: ["Bloque1","Bloque2","Bloque3"]},
     {name : "Funciones", listOfBlocks: ["Bloque1","Bloque2","Bloque3"]},

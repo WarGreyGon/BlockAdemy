@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { SubOption } from '../own-objects/sub-option';
-import { BLOCKSMENUSUBOPTIONS } from '../mocked-data/mock-blocks-menu-options';
+import { BlocksMenuCategory } from '../own-objects/blocks-menu-category';
+import { BLOCKSMENUCATEGORIES } from '../mocked-data/mock-blocks-menu-options';
 
 
 @Injectable()
@@ -11,8 +11,8 @@ export class BlocksMenuService {
     constructor() { }
 
 
-    public getSubOptions(): Promise<SubOption[]> {
+    public getSubOptions(): Promise<BlocksMenuCategory[]> {
 
-        return Promise.resolve(BLOCKSMENUSUBOPTIONS);
+        return Promise.resolve(BLOCKSMENUCATEGORIES);
     }
 }

@@ -1,8 +1,7 @@
-<span>&#9776;</span>
+<span *ngIf="!menuIsHidden" (click)="showBlockMenu()" clickable>&#9776;</span>
 
-<div *ngFor="let subOption of subOptions">
-    {{subOption.name}}
-    <div *ngFor="let block of subOption.listOfBlocks">
-        {{block}}
+<div *ngIf="menuIsHidden">
+    <div *ngFor="let category of menuCategories" style="font-size:1.6em;">
+        <blocks-menu-category [category]="category"></blocks-menu-category>
     </div>
 </div>

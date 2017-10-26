@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BlocksMenuService } from '../../services/blocks-menu.service';
-import { SubOption } from '../../own-objects/sub-option';
+import { BlocksMenuCategory } from '../../own-objects/blocks-menu-category';
 
 
 @Component({
@@ -13,14 +13,21 @@ import { SubOption } from '../../own-objects/sub-option';
 
 export class BlocksMenuComponent implements OnInit {
 
-    private subOptions: SubOption[];
+    private menuIsHidden: boolean = false;
+    private menuCategories: BlocksMenuCategory[];
 
 
     constructor(private blockMenuservice: BlocksMenuService) {
 
-        this.blockMenuservice.getSubOptions().then(subOptions => this.subOptions = subOptions);
+        this.blockMenuservice.getSubOptions().then(menuCategories => this.menuCategories = menuCategories);
     }
 
     ngOnInit() { }
+
+
+    public showBlockMenu() : void {
+
+        this.menuIsHidden = true;
+    }
 
 }

@@ -1,4 +1,4 @@
-export class SubOption {
+export class BlocksMenuCategory {
 
     name: string;
     listOfBlocks: string[];

@@ -1,0 +1,6 @@
+<div *ngFor="let category of categorys" style="font-size:1.6em;">
+    {{category.name}}
+    <div *ngFor="let block of category.listOfBlocks" style="font-size:0.5em;">
+        {{block}}
+    </div>
+</div>

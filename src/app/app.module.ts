@@ -10,6 +10,7 @@ import { GarageComponent } from './components/garage/garage.component';
 import { BlocksMenuComponent } from './components/blocks-menu/blocks-menu.component';
 
 import { BlocksMenuService } from './services/blocks-menu.service';
+import { BlocksMenuCategoryComponent } from './components/blocks-menu-category/blocks-menu-category.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BlocksMenuService } from './services/blocks-menu.service';
     IndexComponent,
     LoginComponent,
     GarageComponent,
-    BlocksMenuComponent
+    BlocksMenuComponent,
+    BlocksMenuCategoryComponent
   ],
   imports: [
     BrowserModule,
