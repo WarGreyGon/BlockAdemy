@@ -25,6 +25,11 @@ export class BlocksMenuComponent implements OnInit {
     ngOnInit() { }
 
 
+    public collapseCategoriesExcept(categoryName: string) : void {
+
+        console.log("parent")
+    }
+
     public showBlockMenu() : void {
 
         this.menuIsHidden = true;

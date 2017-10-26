@@ -1,4 +1,4 @@
-<div class="CategoryName">
+<div class="CategoryName" (click)="onCategoryClicked()">
     {{category.name}}
     <div *ngFor="let block of category.listOfBlocks" class="CategoryItem">
         {{block}}
