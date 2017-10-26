@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BlocksMenuCategory } from '../../own-objects/blocks-menu-category';
 
 
@@ -11,7 +11,8 @@ import { BlocksMenuCategory } from '../../own-objects/blocks-menu-category';
 
 export class BlocksMenuCategoryComponent implements OnInit {
 
-    private category: BlocksMenuCategory; 
+    @Input() category: BlocksMenuCategory;
+
 
     constructor() { }
 

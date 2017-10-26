@@ -1,7 +1,7 @@
 <span *ngIf="!menuIsHidden" (click)="showBlockMenu()" clickable>&#9776;</span>
 
 <div *ngIf="menuIsHidden">
-    <div *ngFor="let category of menuCategories" style="font-size:1.6em;">
+    <div *ngFor="let category of menuCategories">
         <blocks-menu-category [category]="category"></blocks-menu-category>
     </div>
 </div>
