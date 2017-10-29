@@ -5,3 +5,7 @@
 .CategoryItem {
     font-size: 0.7em;
 }
+
+.Collapsed {
+    height: 0;
+}

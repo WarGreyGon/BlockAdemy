@@ -12,7 +12,10 @@ import { BlocksMenuCategory } from '../../own-objects/blocks-menu-category';
 export class BlocksMenuCategoryComponent implements OnInit {
 
     @Input() category: BlocksMenuCategory;
-    @Output() categoryClicked = new EventEmitter<string>();
+    @Input() isCollapsed : boolean = true;
+    @Output() categoryClicked : EventEmitter<string> = new EventEmitter<string>();
+
+    public categoryName : string;
 
 
     constructor() { }
@@ -20,9 +23,9 @@ export class BlocksMenuCategoryComponent implements OnInit {
     ngOnInit() {
     }
 
-    private onCategoryClicked() : void {
+
+    public onCategoryClicked() : void {
 
         this.categoryClicked.emit(this.category.name);
-        console.log(this.category.name)
     }
 }

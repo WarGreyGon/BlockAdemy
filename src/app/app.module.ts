@@ -11,6 +11,7 @@ import { BlocksMenuComponent } from './components/blocks-menu/blocks-menu.compon
 
 import { BlocksMenuService } from './services/blocks-menu.service';
 import { BlocksMenuCategoryComponent } from './components/blocks-menu-category/blocks-menu-category.component';
+import { CollapsableDirective } from './directives/collapsable.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BlocksMenuCategoryComponent } from './components/blocks-menu-category/b
     LoginComponent,
     GarageComponent,
     BlocksMenuComponent,
-    BlocksMenuCategoryComponent
+    BlocksMenuCategoryComponent,
+    CollapsableDirective
   ],
   imports: [
     BrowserModule,

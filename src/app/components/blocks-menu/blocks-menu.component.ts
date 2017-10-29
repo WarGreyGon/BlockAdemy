@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Directive, Input } from '@angular/core';
 
 import { BlocksMenuService } from '../../services/blocks-menu.service';
+import { CollapsableDirective } from '../../directives/collapsable.directive';
 import { BlocksMenuCategory } from '../../own-objects/blocks-menu-category';
 
 
@@ -13,9 +14,13 @@ import { BlocksMenuCategory } from '../../own-objects/blocks-menu-category';
 
 export class BlocksMenuComponent implements OnInit {
 
-    private menuIsHidden: boolean = false;
+    @Input() private menuIsHidden: boolean = false;
     private menuCategories: BlocksMenuCategory[];
 
+    @ViewChild(CollapsableDirective)
+    set blocksMenuCategory(directive: CollapsableDirective) {
+
+    }
 
     constructor(private blockMenuservice: BlocksMenuService) {
 
@@ -27,12 +32,10 @@ export class BlocksMenuComponent implements OnInit {
 
     public collapseCategoriesExcept(categoryName: string) : void {
 
-        console.log("parent")
     }
 
     public showBlockMenu() : void {
 
         this.menuIsHidden = true;
     }
-
 }

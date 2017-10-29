@@ -1,6 +1,6 @@
 <div class="CategoryName" (click)="onCategoryClicked()">
     {{category.name}}
-    <div *ngFor="let block of category.listOfBlocks" class="CategoryItem">
+    <div *ngFor="let block of category.listOfBlocks" class="CategoryItem" [class.Collapsed]="IsCollapsed">
         {{block}}
     </div>
 </div>
