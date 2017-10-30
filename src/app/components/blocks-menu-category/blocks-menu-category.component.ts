@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, Optional } from '@angular/core';
+import { BlocksMenuComponent } from '../blocks-menu/blocks-menu.component'
 import { BlocksMenuCategory } from '../../own-objects/blocks-menu-category';
 
 
@@ -13,19 +14,24 @@ export class BlocksMenuCategoryComponent implements OnInit {
 
     @Input() category: BlocksMenuCategory;
     @Input() isCollapsed : boolean = true;
-    @Output() categoryClicked : EventEmitter<string> = new EventEmitter<string>();
 
     public categoryName : string;
 
 
-    constructor() { }
+    constructor(@Optional() private blocksMenuComponent: BlocksMenuComponent ) {
+
+    }
+
 
     ngOnInit() {
+
+        this.categoryName = this.category.name;
+        this.blocksMenuComponent.registerMenuCategory(this);
     }
 
 
     public onCategoryClicked() : void {
 
-        this.categoryClicked.emit(this.category.name);
+        this.blocksMenuComponent.collapseCategoriesExcept(this.categoryName);
     }
 }

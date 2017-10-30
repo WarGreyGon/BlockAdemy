@@ -8,4 +8,5 @@
 
 .Collapsed {
     height: 0;
+    overflow-y: hidden;
 }
