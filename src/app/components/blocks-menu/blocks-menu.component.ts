@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, Directive, Input } from '@angular/core';
 
+import { GarageComponent } from '../garage/garage.component'
 import { BlocksMenuService } from '../../services/blocks-menu.service';
 import { BlocksMenuCategory } from '../../own-objects/blocks-menu-category';
 import { BlocksMenuCategoryComponent } from '../blocks-menu-category/blocks-menu-category.component';
@@ -14,18 +15,21 @@ import { BlocksMenuCategoryComponent } from '../blocks-menu-category/blocks-menu
 
 export class BlocksMenuComponent implements OnInit {
 
-    @Input() private menuIsHidden: boolean = false;
+    @Input() public menuIsHidden: boolean = true;
     private menuCategories: BlocksMenuCategory[];
     private menuCategoryComponents: BlocksMenuCategoryComponent[];
 
 
-    constructor(private blockMenuservice: BlocksMenuService) {
+    constructor(private blockMenuservice: BlocksMenuService, private garageComponent: GarageComponent) {
 
         this.blockMenuservice.getSubOptions().then(menuCategories => this.menuCategories = menuCategories);
         this.menuCategoryComponents = [];
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+
+        this.garageComponent.blocksMenuComponent = this;
+    }
 
 
     public registerMenuCategory(menuCategory: BlocksMenuCategoryComponent) : void {
@@ -42,6 +46,11 @@ export class BlocksMenuComponent implements OnInit {
 
     public showBlockMenu() : void {
 
-        this.menuIsHidden = true;
+        this.menuIsHidden = false;
+    }
+
+    public onClick(event: Event): void {
+
+        event.preventDefault();
     }
 }

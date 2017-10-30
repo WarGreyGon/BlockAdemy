@@ -1,7 +1,9 @@
-<span *ngIf="!menuIsHidden" (click)="showBlockMenu()" clickable>&#9776;</span>
+<div (click)="onClick($event)">
+    <span *ngIf="menuIsHidden" (click)="showBlockMenu()" clickable>&#9776;</span>
 
-<div *ngIf="menuIsHidden">
-    <div *ngFor="let category of menuCategories">
-        <blocks-menu-category collapsable [category]="category"></blocks-menu-category>
+    <div [ngClass]="{'MenuHidden' : menuIsHidden}">
+        <div *ngFor="let category of menuCategories">
+            <blocks-menu-category collapsable [category]="category"></blocks-menu-category>
+        </div>
     </div>
 </div>
