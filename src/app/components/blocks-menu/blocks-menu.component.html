@@ -1,4 +1,4 @@
-<div (click)="onClick($event)">
+<div class="BlocksMenu" (click)="onClick($event)">
     <span *ngIf="menuIsHidden" (click)="showBlockMenu()" clickable>&#9776;</span>
 
     <div [ngClass]="{'MenuHidden' : menuIsHidden}">
