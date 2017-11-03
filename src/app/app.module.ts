@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule }   from '@angular/router';
-import { DragulaService } from 'ng2-dragula';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +13,7 @@ import { BlocksMenuService } from './services/blocks-menu.service';
 import { BlocksMenuCategoryComponent } from './components/blocks-menu-category/blocks-menu-category.component';
 import { BlocksMenuCategoryItemComponent } from './components/blocks-menu-category-item/blocks-menu-category-item.component';
 import { BlocksWhiteboardComponent } from './components/blocks-whiteboard/blocks-whiteboard.component';
+
 
 @NgModule({
   declarations: [
@@ -32,13 +32,16 @@ import { BlocksWhiteboardComponent } from './components/blocks-whiteboard/blocks
         { path: 'index', component: IndexComponent },
         { path: 'login', component: LoginComponent },
         { path: 'garage', component: GarageComponent }
-    ])
+    ]),
   ],
   providers: [
       BlocksMenuService,
-      DragulaService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+      AppComponent
+  ],
+  exports: [
+  ]
 })
 
 
