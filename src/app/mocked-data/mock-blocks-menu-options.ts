@@ -1,4 +1,4 @@
-import { BlocksMenuCategory } from '../own-objects/blocks-menu-category';
+import { BlocksMenuCategory } from '../model/blocks-menu-category';
 
 export const BLOCKSMENUCATEGORIES: BlocksMenuCategory[] = [
 

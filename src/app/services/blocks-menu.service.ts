@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { BlocksMenuCategory } from '../own-objects/blocks-menu-category';
+import { BlocksMenuCategory } from '../model/blocks-menu-category';
 import { BLOCKSMENUCATEGORIES } from '../mocked-data/mock-blocks-menu-options';
 
 
