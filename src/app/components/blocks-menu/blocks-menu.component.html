@@ -3,7 +3,7 @@
 
     <div [ngClass]="{'MenuHidden' : menuIsHidden}">
         <div *ngFor="let category of menuCategories">
-            <blocks-menu-category collapsable [category]="category"></blocks-menu-category>
+            <blocks-menu-category [category]="category"></blocks-menu-category>
         </div>
     </div>
 </div>
