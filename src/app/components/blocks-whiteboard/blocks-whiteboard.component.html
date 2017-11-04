@@ -1,5 +1,5 @@
-<div class="Whiteboard" (click)="hideBlocksMenu()">    
-    <p>
-        blocks-whiteboard works!
-    </p>
+<div class="Whiteboard" (click)="hideBlocksMenu()" (dragenter)="onDragEnter($event)" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+    <div *ngFor="let blockInfo of blockInfoList">
+        <block [myBasicInfo]="blockInfo"></block>
+    </div>
 </div>

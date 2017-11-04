@@ -13,6 +13,7 @@ import { BlocksMenuService } from './services/blocks-menu.service';
 import { BlocksMenuCategoryComponent } from './components/blocks-menu-category/blocks-menu-category.component';
 import { BlocksMenuCategoryItemComponent } from './components/blocks-menu-category-item/blocks-menu-category-item.component';
 import { BlocksWhiteboardComponent } from './components/blocks-whiteboard/blocks-whiteboard.component';
+import { BlockComponent } from './components/block/block.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { BlocksWhiteboardComponent } from './components/blocks-whiteboard/blocks
     BlocksMenuComponent,
     BlocksMenuCategoryComponent,
     BlocksMenuCategoryItemComponent,
-    BlocksWhiteboardComponent
+    BlocksWhiteboardComponent,
+    BlockComponent
   ],
   imports: [
     BrowserModule,
