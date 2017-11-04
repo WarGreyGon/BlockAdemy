@@ -7,6 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { GarageComponent } from './components/garage/garage.component';
+import { BlocksMenuComponent } from './components/blocks-menu/blocks-menu.component';
+
+import { BlocksMenuService } from './services/blocks-menu.service';
+import { BlocksMenuCategoryComponent } from './components/blocks-menu-category/blocks-menu-category.component';
+import { BlocksMenuCategoryItemComponent } from './components/blocks-menu-category-item/blocks-menu-category-item.component';
+import { BlocksWhiteboardComponent } from './components/blocks-whiteboard/blocks-whiteboard.component';
+import { BlockComponent } from './components/block/block.component';
 
 
 @NgModule({
@@ -14,7 +21,12 @@ import { GarageComponent } from './components/garage/garage.component';
     AppComponent,
     IndexComponent,
     LoginComponent,
-    GarageComponent
+    GarageComponent,
+    BlocksMenuComponent,
+    BlocksMenuCategoryComponent,
+    BlocksMenuCategoryItemComponent,
+    BlocksWhiteboardComponent,
+    BlockComponent
   ],
   imports: [
     BrowserModule,
@@ -22,10 +34,16 @@ import { GarageComponent } from './components/garage/garage.component';
         { path: 'index', component: IndexComponent },
         { path: 'login', component: LoginComponent },
         { path: 'garage', component: GarageComponent }
-    ])
+    ]),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+      BlocksMenuService,
+  ],
+  bootstrap: [
+      AppComponent
+  ],
+  exports: [
+  ]
 })
 
 

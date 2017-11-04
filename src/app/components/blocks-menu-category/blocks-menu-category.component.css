@@ -1,0 +1,12 @@
+.CategoryName {
+    font-size: 1.5em;
+}
+
+.CategoryItem {
+    font-size: 0.7em;
+}
+
+.Collapsed {
+    height: 0;
+    overflow-y: hidden;
+}

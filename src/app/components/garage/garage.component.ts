@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { BlocksMenuComponent } from '../blocks-menu/blocks-menu.component';
+
 
 @Component({
-  selector: 'app-garage',
-  templateUrl: './garage.component.html',
-  styleUrls: ['./garage.component.css']
+    selector: 'garage',
+    templateUrl: './garage.component.html',
+    styleUrls: ['./garage.component.css']
 })
+
+
 export class GarageComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
-  }
+    public blocksMenuComponent: BlocksMenuComponent;
 
+    constructor() { }
+
+    ngOnInit() {
+    }
 }

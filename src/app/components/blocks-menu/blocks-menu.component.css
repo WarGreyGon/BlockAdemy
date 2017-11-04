@@ -1,0 +1,9 @@
+.BlocksMenu{
+    width: 20%;
+    float: left;
+}
+
+.MenuHidden{
+    width: 0;
+    overflow-x: hidden;
+}
