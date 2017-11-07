@@ -33,9 +33,8 @@ export class BlocksWhiteboardComponent implements OnInit {
         this.blocksMenuComponent.menuIsHidden = true;
     }
 
-    public onDragEnter (event: Event) : void {
+    public onDragEnter (event: any) : void {
 
-        // console.log("enter")
     }
 
     public onDragOver(event: any) : void {
@@ -45,14 +44,11 @@ export class BlocksWhiteboardComponent implements OnInit {
         }
 
         event.dataTransfer.dropEffect = 'move';
-        // console.log("overing")
     }
 
     public onDrop (event: any) : void {
 
         event.stopPropagation();
-        console.log("droped")
-        console.log(event)
         let blockDroped: BlockBasicInfo =  {
             name : "test",
             xPosistion: event.pageX,

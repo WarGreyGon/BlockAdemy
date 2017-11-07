@@ -12,6 +12,8 @@ import { BlockBasicInfo } from '../../model/block-basic-info';
 export class BlockComponent implements OnInit {
 
     @Input() myBasicInfo: BlockBasicInfo;
+    private initialXPosition: string;
+    private initialYPosition: string;
 
 
     constructor() {
@@ -20,5 +22,7 @@ export class BlockComponent implements OnInit {
 
     ngOnInit() {
 
+        this.initialXPosition = this.myBasicInfo.xPosistion + "px";
+        this.initialYPosition = this.myBasicInfo.yPosistion + "px";
     }
 }
