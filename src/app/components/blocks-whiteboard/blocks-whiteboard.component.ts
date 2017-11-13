@@ -32,28 +32,4 @@ export class BlocksWhiteboardComponent implements OnInit {
 
         this.blocksMenuComponent.menuIsHidden = true;
     }
-
-    public onDragEnter (event: any) : void {
-
-    }
-
-    public onDragOver(event: any) : void {
-
-        if (event.preventDefault) {
-            event.preventDefault();
-        }
-
-        event.dataTransfer.dropEffect = 'move';
-    }
-
-    public onDrop (event: any) : void {
-
-        event.stopPropagation();
-        let blockDroped: BlockBasicInfo =  {
-            name : "test",
-            xPosistion: event.pageX,
-            yPosistion: event.pageY,
-        };
-        this.blockInfoList.push(blockDroped);
-    }
 }
