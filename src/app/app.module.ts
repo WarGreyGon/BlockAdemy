@@ -14,6 +14,7 @@ import { BlocksMenuCategoryComponent } from './components/blocks-menu-category/b
 import { BlocksMenuCategoryItemComponent } from './components/blocks-menu-category-item/blocks-menu-category-item.component';
 import { BlocksWhiteboardComponent } from './components/blocks-whiteboard/blocks-whiteboard.component';
 import { BlockComponent } from './components/block/block.component';
+import { DroppableFromMenuDirective } from './directives/droppable-from-menu.directive';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { BlockComponent } from './components/block/block.component';
     BlocksMenuCategoryComponent,
     BlocksMenuCategoryItemComponent,
     BlocksWhiteboardComponent,
-    BlockComponent
+    BlockComponent,
+    DroppableFromMenuDirective
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,9 @@ import { BlockComponent } from './components/block/block.component';
       AppComponent
   ],
   exports: [
+  ],
+  entryComponents: [
+      BlockComponent
   ]
 })
 

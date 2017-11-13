@@ -6,5 +6,4 @@ export class BlockBasicInfo {
 
     public xPosistion: number;
     public yPosistion: number;
-    // public placedFirstTime?: boolean = false;
 }

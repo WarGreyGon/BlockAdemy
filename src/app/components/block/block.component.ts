@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { BlockBasicInfo } from '../../model/block-basic-info';
 
 
@@ -11,7 +11,15 @@ import { BlockBasicInfo } from '../../model/block-basic-info';
 
 export class BlockComponent implements OnInit {
 
-    @Input() myBasicInfo: BlockBasicInfo;
+    @HostBinding('style.top.px')
+    public initialXPosition: number = 0;
+    @HostBinding('style.left.px')
+    public initialYPosition: number = 0;
+    @HostBinding('style.color')
+    public color: string = "black";
+
+    // @Input() myBasicInfo: BlockBasicInfo;
+    public name: string = "";
 
 
     constructor() {
