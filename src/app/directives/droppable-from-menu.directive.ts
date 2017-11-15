@@ -1,4 +1,4 @@
-import { Directive, HostListener, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
+import { Directive, HostListener, ComponentFactoryResolver, ViewContainerRef, ReflectiveInjector } from '@angular/core';
 import { BlockComponent } from '../components/block/block.component';
 
 
@@ -31,16 +31,13 @@ export class DroppableFromMenuDirective {
 
     private injectBlock(event: any): void {
 
-        const factory = this.componentFactoryResolver.resolveComponentFactory(BlockComponent);
-        const ref = this.viewContainerRef.createComponent(factory);
+        let injector = ReflectiveInjector.fromResolvedProviders([], this.viewContainerRef.parentInjector);
+        let factory = this.componentFactoryResolver.resolveComponentFactory(BlockComponent);
+        let injectableBlock = factory.create(injector);
+        this.viewContainerRef.insert(injectableBlock.hostView);
 
-
-        ref.instance.name = "test"
-        ref.instance.initialXPosition = 300;
-        ref.instance.initialYPosition = 300;
-        ref.instance.color = "yellow";
-
-
-        ref.changeDetectorRef.detectChanges();
+        (injectableBlock.location.nativeElement as HTMLElement).style["position"] = 'absolute';
+        (injectableBlock.location.nativeElement as HTMLElement).style["top"] = event.pageY + 'px';
+        (injectableBlock.location.nativeElement as HTMLElement).style["left"] = event.pageX + 'px';
     }
 }

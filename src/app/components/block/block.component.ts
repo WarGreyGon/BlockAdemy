@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, EventEmitter, Output, ElementRef, AfterViewInit } from '@angular/core';
 import { BlockBasicInfo } from '../../model/block-basic-info';
 
 
@@ -9,24 +9,17 @@ import { BlockBasicInfo } from '../../model/block-basic-info';
 })
 
 
-export class BlockComponent implements OnInit {
+export class BlockComponent implements OnInit, AfterViewInit {
 
-    @HostBinding('style.top.px')
-    public initialXPosition: number = 0;
-    @HostBinding('style.left.px')
-    public initialYPosition: number = 0;
-    @HostBinding('style.color')
-    public color: string = "black";
-
-    // @Input() myBasicInfo: BlockBasicInfo;
-    public name: string = "";
-
+    public name: string = "Block";
 
     constructor() {
 
     }
 
     ngOnInit() {
+    }
 
+    ngAfterViewInit() {
     }
 }
