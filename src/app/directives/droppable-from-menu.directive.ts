@@ -13,7 +13,9 @@ export class DroppableFromMenuDirective {
     @HostListener('drop', ['$event'])
     onDrop(event: any){
         event.stopPropagation();
-        this.injectBlock(event);
+        if (event.dataTransfer.getData('Text') == "MenuBlockItem"){
+            this.injectBlock(event);
+        }
     }
 
     @HostListener('dragover', ['$event'])

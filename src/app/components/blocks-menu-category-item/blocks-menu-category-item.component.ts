@@ -12,6 +12,7 @@ export class BlocksMenuCategoryItemComponent implements OnInit {
 
 
     @Input() name: string;
+    private className: string = "MenuBlockItem"
 
     constructor() {
 
@@ -29,11 +30,11 @@ export class BlocksMenuCategoryItemComponent implements OnInit {
     public onDragStart(event: any) : void {
 
         event.dataTransfer.effectAllowed = 'move';
+        event.dataTransfer.setData('Text', this.className);
     }
 
     public onDrag(event: any) : void {
 
-        event.dataTransfer.setData("text", event.target.id);
     }
 
     public onDragEnd(event: Event) : void {
