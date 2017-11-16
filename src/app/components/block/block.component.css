@@ -1,6 +1,6 @@
 .Block{
     height: 80px;
     width: 80px;
+    background-color: pink;
     position: absolute;
-    background: green;
 }

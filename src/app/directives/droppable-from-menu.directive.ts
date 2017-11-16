@@ -1,4 +1,4 @@
-import { Directive, HostListener, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
+import { Directive, HostListener, ComponentFactoryResolver, ViewContainerRef, ReflectiveInjector } from '@angular/core';
 import { BlockComponent } from '../components/block/block.component';
 
 
@@ -13,7 +13,11 @@ export class DroppableFromMenuDirective {
     @HostListener('drop', ['$event'])
     onDrop(event: any){
         event.stopPropagation();
-        this.injectBlock(event);
+        if (event.dataTransfer.getData('Text') == "MenuBlockItem"){
+            this.injectBlock(event);
+        } else {
+            this.normalDrop(event);
+        }
     }
 
     @HostListener('dragover', ['$event'])
@@ -31,16 +35,19 @@ export class DroppableFromMenuDirective {
 
     private injectBlock(event: any): void {
 
-        const factory = this.componentFactoryResolver.resolveComponentFactory(BlockComponent);
-        const ref = this.viewContainerRef.createComponent(factory);
+        let injector = ReflectiveInjector.fromResolvedProviders([], this.viewContainerRef.parentInjector);
+        let factory = this.componentFactoryResolver.resolveComponentFactory(BlockComponent);
+        let injectableBlock = factory.create(injector);
+        this.viewContainerRef.insert(injectableBlock.hostView);
 
+        let injectedEl = (injectableBlock.location.nativeElement as HTMLElement);
+        injectedEl.style["position"] = 'absolute';
+        injectedEl.style["top"] = (event.pageY - (40)) + 'px';
+        injectedEl.style["left"] = (event.pageX - (40)) + 'px';
+    }
 
-        ref.instance.name = "test"
-        ref.instance.initialXPosition = 300;
-        ref.instance.initialYPosition = 300;
-        ref.instance.color = "yellow";
+    private normalDrop(event: any): void {
 
-
-        ref.changeDetectorRef.detectChanges();
+        event.preventDefault();
     }
 }

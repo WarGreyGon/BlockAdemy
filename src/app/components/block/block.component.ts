@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, EventEmitter, Output, ElementRef, AfterViewInit } from '@angular/core';
 import { BlockBasicInfo } from '../../model/block-basic-info';
 
 
@@ -11,22 +11,30 @@ import { BlockBasicInfo } from '../../model/block-basic-info';
 
 export class BlockComponent implements OnInit {
 
-    @HostBinding('style.top.px')
-    public initialXPosition: number = 0;
-    @HostBinding('style.left.px')
-    public initialYPosition: number = 0;
-    @HostBinding('style.color')
-    public color: string = "black";
-
-    // @Input() myBasicInfo: BlockBasicInfo;
-    public name: string = "";
+    public name: string = "Block";
 
 
-    constructor() {
+    constructor(public elementRef: ElementRef) {
 
     }
 
     ngOnInit() {
+    }
 
+
+    public onDragStart(event: any) : void {
+
+        event.dataTransfer.effectAllowed = 'move';
+    }
+
+    public onDrag(event: any) : void {
+
+    }
+
+    public onDragEnd(event: any) : void {
+
+        let dragEl = this.elementRef.nativeElement;
+        dragEl.style.top = (event.pageY - (event.toElement.offsetHeight/2)) + 'px';
+        dragEl.style.left = (event.pageX - (event.toElement.offsetWidth/2)) + 'px';
     }
 }
