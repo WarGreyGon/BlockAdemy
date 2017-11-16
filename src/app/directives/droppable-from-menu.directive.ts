@@ -15,6 +15,8 @@ export class DroppableFromMenuDirective {
         event.stopPropagation();
         if (event.dataTransfer.getData('Text') == "MenuBlockItem"){
             this.injectBlock(event);
+        } else {
+            this.normalDrop(event);
         }
     }
 
@@ -38,8 +40,14 @@ export class DroppableFromMenuDirective {
         let injectableBlock = factory.create(injector);
         this.viewContainerRef.insert(injectableBlock.hostView);
 
-        (injectableBlock.location.nativeElement as HTMLElement).style["position"] = 'absolute';
-        (injectableBlock.location.nativeElement as HTMLElement).style["top"] = event.pageY + 'px';
-        (injectableBlock.location.nativeElement as HTMLElement).style["left"] = event.pageX + 'px';
+        let injectedEl = (injectableBlock.location.nativeElement as HTMLElement);
+        injectedEl.style["position"] = 'absolute';
+        injectedEl.style["top"] = (event.pageY - (40)) + 'px';
+        injectedEl.style["left"] = (event.pageX - (40)) + 'px';
+    }
+
+    private normalDrop(event: any): void {
+
+        event.preventDefault();
     }
 }
