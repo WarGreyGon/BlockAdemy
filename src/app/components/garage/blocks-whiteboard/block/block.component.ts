@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostBinding, EventEmitter, Output, ElementRef, AfterViewInit } from '@angular/core';
-import { BlockBasicInfo } from '../../model/block-basic-info';
+import { BlockBasicInfo } from '../../../../model/block-basic-info';
 
 
 @Component({

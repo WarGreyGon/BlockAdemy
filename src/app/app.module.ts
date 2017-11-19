@@ -7,13 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { GarageComponent } from './components/garage/garage.component';
-import { BlocksMenuComponent } from './components/blocks-menu/blocks-menu.component';
+import { BlocksMenuComponent } from './components/garage/blocks-menu/blocks-menu.component';
 
 import { BlocksMenuService } from './services/blocks-menu.service';
-import { BlocksMenuCategoryComponent } from './components/blocks-menu-category/blocks-menu-category.component';
-import { BlocksMenuCategoryItemComponent } from './components/blocks-menu-category-item/blocks-menu-category-item.component';
-import { BlocksWhiteboardComponent } from './components/blocks-whiteboard/blocks-whiteboard.component';
-import { BlockComponent } from './components/block/block.component';
+import { BlocksMenuCategoryComponent } from './components/garage/blocks-menu/blocks-menu-category/blocks-menu-category.component';
+import { BlocksMenuCategoryItemComponent } from './components/garage/blocks-menu/blocks-menu-category-item/blocks-menu-category-item.component';
+import { BlocksWhiteboardComponent } from './components/garage/blocks-whiteboard/blocks-whiteboard.component';
+import { BlockComponent } from './components/garage/blocks-whiteboard/block/block.component';
 import { DroppableFromMenuDirective } from './directives/droppable-from-menu.directive';
 import { DraggableInWhiteboardDirective } from './directives/draggable-in-whiteboard.directive';
 

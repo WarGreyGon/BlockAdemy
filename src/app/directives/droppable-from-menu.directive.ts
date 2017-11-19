@@ -1,5 +1,5 @@
 import { Directive, HostListener, ComponentFactoryResolver, ViewContainerRef, ReflectiveInjector } from '@angular/core';
-import { BlockComponent } from '../components/block/block.component';
+import { BlockComponent } from '../components/garage/blocks-whiteboard/block/block.component';
 
 
 @Directive({

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GarageComponent } from '../garage/garage.component'
+import { GarageComponent } from '../garage.component'
 import { BlocksMenuComponent } from '../blocks-menu/blocks-menu.component';
-import { BlockBasicInfo } from '../../model/block-basic-info';
+import { BlockBasicInfo } from '../../../model/block-basic-info';
 
 
 @Component({

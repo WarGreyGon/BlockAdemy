@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild, Directive, Input } from '@angular/core';
 
-import { GarageComponent } from '../garage/garage.component'
-import { BlocksMenuService } from '../../services/blocks-menu.service';
-import { BlocksMenuCategory } from '../../model/blocks-menu-category';
-import { BlocksMenuCategoryComponent } from '../blocks-menu-category/blocks-menu-category.component';
+import { GarageComponent } from '../garage.component'
+import { BlocksMenuService } from '../../../services/blocks-menu.service';
+import { BlocksMenuCategory } from '../../../model/blocks-menu-category';
+import { BlocksMenuCategoryComponent } from './blocks-menu-category/blocks-menu-category.component';
 
 
 @Component({

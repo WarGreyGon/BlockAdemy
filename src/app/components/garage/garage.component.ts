@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlocksMenuComponent } from '../blocks-menu/blocks-menu.component';
+import { BlocksMenuComponent } from './blocks-menu/blocks-menu.component';
 
 
 @Component({

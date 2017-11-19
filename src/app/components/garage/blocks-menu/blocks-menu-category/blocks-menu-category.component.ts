@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, Optional } from '@angular/core';
-import { BlocksMenuComponent } from '../blocks-menu/blocks-menu.component'
-import { BlocksMenuCategory } from '../../model/blocks-menu-category';
+import { BlocksMenuComponent } from '../blocks-menu.component'
+import { BlocksMenuCategory } from '../../../../model/blocks-menu-category';
 
 
 @Component({
