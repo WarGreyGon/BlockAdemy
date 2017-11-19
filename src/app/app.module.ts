@@ -15,6 +15,7 @@ import { BlocksMenuCategoryItemComponent } from './components/blocks-menu-catego
 import { BlocksWhiteboardComponent } from './components/blocks-whiteboard/blocks-whiteboard.component';
 import { BlockComponent } from './components/block/block.component';
 import { DroppableFromMenuDirective } from './directives/droppable-from-menu.directive';
+import { DraggableInWhiteboardDirective } from './directives/draggable-in-whiteboard.directive';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { DroppableFromMenuDirective } from './directives/droppable-from-menu.dir
     BlocksMenuCategoryItemComponent,
     BlocksWhiteboardComponent,
     BlockComponent,
-    DroppableFromMenuDirective
+    DroppableFromMenuDirective,
+    DraggableInWhiteboardDirective
   ],
   imports: [
     BrowserModule,
