@@ -1,0 +1,33 @@
+.Link{
+    width: 15%;
+    height: 15%;
+    position: absolute;
+}
+
+.VerticalMale{
+    background-color: white;
+    border-radius: 1em 1em 0 0;
+    margin-top: -35%;
+}
+
+.Internal{
+    background-color: white;
+    border-radius: 0 0 1em 1em;
+}
+
+.VerticalFemale{
+    background-color: black;
+    border-radius: 1em 1em 0 0;
+    margin-top: 63%;
+}
+
+/*.AsideMale{
+    background-color: white;
+    border-radius: 0 1em 1em 0;
+    margin-left: 100%;
+}
+
+.AsideFemale{
+    background-color: black;
+    border-radius: 0 1em 1em 0;
+}*/

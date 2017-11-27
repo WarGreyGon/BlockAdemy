@@ -1,5 +1,6 @@
-import { Directive, HostListener, ComponentFactoryResolver, ViewContainerRef, ReflectiveInjector } from '@angular/core';
+import { Directive, HostListener, ComponentFactoryResolver, ViewContainerRef} from '@angular/core';
 import { BlockComponent } from '../components/garage/blocks-whiteboard/block/block.component';
+import { BlocksWhiteboardComponent } from '../components/garage/blocks-whiteboard/blocks-whiteboard.component';
 
 
 @Directive({
@@ -28,22 +29,21 @@ export class DroppableFromMenuDirective {
         event.dataTransfer.dropEffect = 'move';
     }
 
+    constructor(private componentFactoryResolver: ComponentFactoryResolver, private host: BlocksWhiteboardComponent) {
 
-
-    constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef) { }
+    }
 
 
     private injectBlock(event: any): void {
 
-        let injector = ReflectiveInjector.fromResolvedProviders([], this.viewContainerRef.parentInjector);
-        let factory = this.componentFactoryResolver.resolveComponentFactory(BlockComponent);
-        let injectableBlock = factory.create(injector);
-        this.viewContainerRef.insert(injectableBlock.hostView);
+        const factory = this.componentFactoryResolver.resolveComponentFactory(BlockComponent);
+        const injectableBlock = factory.create(this.host.template.parentInjector);
+        this.host.template.insert(injectableBlock.hostView);
 
         let injectedEl = (injectableBlock.location.nativeElement as HTMLElement);
         injectedEl.style["position"] = 'absolute';
-        injectedEl.style["top"] = (event.pageY - (40)) + 'px';
-        injectedEl.style["left"] = (event.pageX - (40)) + 'px';
+        injectedEl.style["top"] = (event.offsetY - (40)) + 'px';
+        injectedEl.style["left"] = (event.offsetX - (40)) + 'px';
     }
 
     private normalDrop(event: any): void {

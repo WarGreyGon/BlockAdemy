@@ -16,6 +16,7 @@ import { BlocksWhiteboardComponent } from './components/garage/blocks-whiteboard
 import { BlockComponent } from './components/garage/blocks-whiteboard/block/block.component';
 import { DroppableFromMenuDirective } from './directives/droppable-from-menu.directive';
 import { DraggableInWhiteboardDirective } from './directives/draggable-in-whiteboard.directive';
+import { BlocksLinkComponent } from './components/garage/blocks-whiteboard/block/blocks-link/blocks-link.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { DraggableInWhiteboardDirective } from './directives/draggable-in-whiteb
     BlocksWhiteboardComponent,
     BlockComponent,
     DroppableFromMenuDirective,
-    DraggableInWhiteboardDirective
+    DraggableInWhiteboardDirective,
+    BlocksLinkComponent
   ],
   imports: [
     BrowserModule,

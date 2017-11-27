@@ -3,6 +3,7 @@
     height: 90vh;
     float: left;
 
+    position: relative;
     background-color: grey;
     overflow: scroll;
 }

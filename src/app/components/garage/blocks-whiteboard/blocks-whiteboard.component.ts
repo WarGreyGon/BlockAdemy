@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 
 import { GarageComponent } from '../garage.component'
 import { BlocksMenuComponent } from '../blocks-menu/blocks-menu.component';
@@ -16,6 +16,8 @@ export class BlocksWhiteboardComponent implements OnInit {
 
     private blocksMenuComponent: BlocksMenuComponent;
     public blockInfoList: BlockBasicInfo[];
+
+    @ViewChild('template', { read: ViewContainerRef }) template: ViewContainerRef;
 
     constructor(private garageComponent: GarageComponent) {
 

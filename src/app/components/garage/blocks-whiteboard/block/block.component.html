@@ -1,3 +1,6 @@
 <div class="Block" draggable="true" (dragstart)="onDragStart($event)" (drag)="onDrag($event)" (dragend)="onDragEnd($event)">
     {{name}}
+    <blocks-link [sideToPlace]="'Link VerticalMale'"></blocks-link>
+    <blocks-link [sideToPlace]="'Link Internal'"></blocks-link>
+    <blocks-link [sideToPlace]="'Link VerticalFemale'"></blocks-link>
 </div>
